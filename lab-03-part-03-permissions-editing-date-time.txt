@@ -81,9 +81,10 @@ staff = group
 
 What commands did you use to do this?  What was the output?
 ----------
+chmod u+x copy_to_backup.sh
 
-
-
+student$ ls -l copy_to_backup.sh
+-rwxr--r--  1 student  staff  0 Sep 18 14:41 copy_to_backup.sh
 ==========
 7. Try executing the file!
 
@@ -91,7 +92,8 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
-
+There is nothing to execute inside the file
+./copy_to_backup.sh
 
 
 ==========
@@ -99,7 +101,7 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+nano copy_to_backup.sh
 
 
 ==========
@@ -111,26 +113,33 @@ c. print out "I'm done backing up"
 
 Write out the code in your file below...
 ----------
-
+#!/bin/bash
+cd ~
+mkdir -p backup
+cp -r *.txt backup
+# prints "I'm done backing up"
 
 
 ==========
 10. Create a directory in your home called test
 ----------
+student$ mkdir test
+
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
 What commands did you use to do this?
 ----------
-
-
-
+student$ cd test
+student$ touch 1.txt 2.txt
+student$ ls
+1.txt	2.txt
 ==========
 12. Move the script that you created into this directory.
 
 What commands did you use to do this?
 ----------
-
+student$ mv copy_to_backup.sh test
 
 
 ==========
@@ -138,7 +147,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+student$ ./copy_to_backup.sh
 
 
 ==========
@@ -146,3 +155,16 @@ What commands did you use to do this?
 
 What commands did you use to do this?  Show the output.
 ----------
+student$ ls
+Adlm			Movies			Things			ipe.properties
+Adobe			Music			__MACOSX		isus
+Applications		New Unity Project	backup			mtec1002-lab-03
+Desktop			New Unity Project 1	curl			mtec1002-lab-03.tar.gz
+Documents		Pictures		drills.py		pymel.log
+Downloads		Public			foo			stuff
+Library			QLData			garbage			test
+MPLABXProjects		Scripting Intro		google.html.txt		xgen
+ent-v314-014:~ student$ cd test
+
+backup student$ ls
+google.html.txt
